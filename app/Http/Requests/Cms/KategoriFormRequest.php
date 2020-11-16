@@ -13,7 +13,7 @@ class KategoriFormRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class KategoriFormRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'kategori' => 'required|unique:kategori_beritas,kategori|string|min:3'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'kategori' => 'Kategori'
         ];
     }
 }

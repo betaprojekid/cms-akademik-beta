@@ -1,9 +1,31 @@
 package:
-  ☐ laravel ui
-  ☐ laravel telescope
-  ☐ php artisan make:view
+  ✔ laravel ui @done (11/16/2020, 7:52:34 AM)
+  ✔ laravel telescope @done (11/16/2020, 7:52:33 AM)
+  ✔ php artisan make:view @done (11/16/2020, 7:52:32 AM)
+  ☐ sweet alert 2 for delete confirmation
 
 bug: 
 
 catatan:
 
+fitur:
+  ☐ berita
+    ☐ index
+    ☐ detail
+    ☐ add
+    ☐ delete
+  ☐ kategori berita
+    ✔ index @done (11/16/2020, 7:57:21 AM)
+    ☐ datail
+    ✔ add @done (11/16/2020, 7:57:24 AM)
+    ☐ delete
+  ☐ pengumuman
+    ☐ index
+    ☐ deteil
+    ☐ add
+    ☐ delete
+  ☐ user management
+    ☐ index
+    ☐ detail
+    ☐ add
+    ☐ delete

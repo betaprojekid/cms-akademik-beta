@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\KategoriBerita as Kategori;
 use App\Http\Requests\Cms\KategoriFormRequest as FormRequest;
+use Illuminate\Support\Str;
 
 class KategoriBeritaController extends Controller
 {
@@ -28,7 +29,7 @@ class KategoriBeritaController extends Controller
      */
     public function create()
     {
-        //
+        return view('cms.kategori.add');
     }
 
     /**
@@ -37,9 +38,16 @@ class KategoriBeritaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormRequest $request)
     {
-        //
+        $kategori = Kategori::create([
+            'kategori' => $request->kategori,
+            'slug' => Str::slug($request->kategori)
+        ]);
+
+        return redirect()
+                ->route('kategori-berita.index')
+                ->with('sukses', 'Data berhasil disimpan');
     }
 
     /**
@@ -71,7 +79,7 @@ class KategoriBeritaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FormRequest $request, $id)
     {
         //
     }
@@ -84,6 +92,14 @@ class KategoriBeritaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $kategori = Kategori::findOrFail($id);
+        
+        dd($kategori);
+        
+        // $kategori->delete();
+
+        // return redirect()
+        //         ->route('kategori-berita.index')
+        //         ->with('sukses', 'data berhasil dihapus');
     }
 }
