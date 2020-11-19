@@ -22,7 +22,7 @@
                                   <span>Berita</span>
                               </a>
                               <ul class="submenu">
-                                  <li class="active"><a href="#">Semua Berita</a></li>
+                                  <li class="active"><a href="{{ route('berita.index') }}">Semua Berita</a></li>
                                   <li><a href="#">Pengumuman</a></li>
                                   <li><a href="{{ route('kategori-berita.index') }}">Kategori Berita</a></li>
                               </ul>
@@ -42,6 +42,16 @@
                                   <li><a href="#">Profil Saya</a></li>
                               </ul>
                           </li>
+                          <li>
+                            <a href="javascript:void(0)"><i class="ti-pie-chart"></i><span>Pengaturan Web</span></a>
+                            <ul class="submenu">
+                                <li><a href="#">Slider</a></li>
+                                <li><a href="#">Logo</a></li>
+                                <li><a href="#">Section</a></li>
+                                <li><a href="#">Sosial Media</a></li>
+                                <li><a href="#">Footer</a></li>
+                            </ul>
+                        </li>
                           <li>
                               <a href="javascript:void(0)"><i class="ti-pie-chart"></i><span>Pengaturan</span></a>
                               <ul class="submenu">
@@ -91,12 +101,12 @@
                                   <li><a href="datatable.html">datatable</a></li>
                               </ul>
                           </li> --}}
-                          <li>
+                          {{-- <li>
                               <a href="#">
                                   <i class="ti-map-alt"></i> 
                                   <span>teks</span>
                               </a>
-                          </li>
+                          </li> --}}
                       </ul>
                   </nav>
               </div>

@@ -38,6 +38,7 @@ Route::group([
     // delete route using sweetalert
     // Route::get('kategori-berita/delete/{id}', 'KategoriBeritaController@destroy');
     Route::resource('kategori-berita', 'KategoriBeritaController');
+    Route::resource('berita', 'BeritaController');
 });
 
 // Auth::routes([

@@ -13,6 +13,7 @@ class CreateKategoriBeritasTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('kategori_beritas', function (Blueprint $table) {
             $table->id();
             $table->string('kategori')->unique();
@@ -20,6 +21,7 @@ class CreateKategoriBeritasTable extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -29,6 +31,8 @@ class CreateKategoriBeritasTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('kategori_beritas');
+        Schema::enableForeignKeyConstraints();
     }
 }
