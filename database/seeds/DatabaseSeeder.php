@@ -11,6 +11,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->reset();
         // $this->call(UserSeeder::class);
+        // $this->call([
+        //     ''
+        // ])
+    }
+
+    public function reset(){
+        // truncate all here
     }
 }

@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Cms;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\{
+    Berita,
+    KategoriBerita as Kategori
+};
+use App\Http\Requests\Cms\BeritaFormReques as FormRequest;
 
 class BeritaController extends Controller
 {
@@ -24,7 +29,8 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        //
+        $kategori = Kategori::select('id', 'kategori')->get();
+        return view('cms.berita.add', compact('kategori'));
     }
 
     /**
@@ -33,7 +39,7 @@ class BeritaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormRequest $request)
     {
         //
     }
