@@ -13,3 +13,7 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
+
+// copy directory
+mix.copyDirectory('node_modules/tinymce', 'public/plugins/tinymce');
+mix.copyDirectory('node_modules/sweetalert2', 'public/plugins/sweetalert2');

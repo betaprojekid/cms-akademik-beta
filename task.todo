@@ -3,6 +3,8 @@ package:
   ✔ laravel telescope @done (11/16/2020, 7:52:33 AM)
   ✔ php artisan make:view @done (11/16/2020, 7:52:32 AM)
   ☐ sweet alert 2 for delete confirmation
+  ☐ tinymce
+  ☐ laravel file manager https://unisharp.github.io/laravel-filemanager/installation (baru sampai thap 3)
 
 bug: 
 

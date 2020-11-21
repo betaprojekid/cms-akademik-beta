@@ -57,3 +57,16 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('plugins') }}/tinymce/jquery.tinymce.min.js"></script>
+    <script src="{{ asset('plugins') }}/tinymce/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: '#berita',
+            plugins: 'advlist link image lists',
+            // width: 600,
+            height: 500,
+        });
+    </script>
+@endpush
