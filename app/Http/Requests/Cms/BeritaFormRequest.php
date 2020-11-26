@@ -4,7 +4,7 @@ namespace App\Http\Requests\Cms;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BeritaFormReques extends FormRequest
+class BeritaFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,23 +26,31 @@ class BeritaFormReques extends FormRequest
         $id = $this->route('beritum');
 
         $method = $this->getMethod();
-        if(null !== $this->getMethod('_method', null)){
-            $method = $this->get('_method');
-        }
-        $this->offsetUnset('_method');
-
         $rules = [];
 
         switch($method){
             case 'POST':
-            break;
+                $rules += [
+                    'judul'         => ['required', 'min:3', 'string'],
+                    'kategori'      => ['required', 'exists:kategori_beritas,id', 'integer'],
+                    'berita'        => ['required', 'string', 'min:5'],
+                    'gambar_berita' => ['image', 'max:512', 'nullable']
+                ];
+                break;
             case 'PUT':
             case 'PATCH':
+                $rules +=[];
             break;
         }
+
+        return $rules;
     }
 
     public function attributes(){
-        
+        return [
+            'judul'    => 'Judul',
+            'kategori' => 'Kategori Berita',
+            'berita'   => 'Berita'
+        ];
     }
 }

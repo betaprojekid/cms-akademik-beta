@@ -31,7 +31,8 @@ Route::get('/login', function(){
 
 Route::group([
     'namespace' => 'Cms',
-    'prefix' => 'cms',
+    'prefix'    => 'cms',
+    'as'        => 'cms.'
 ], function(){
     Route::get('/', 'DashboardController');
     
@@ -39,6 +40,11 @@ Route::group([
     // Route::get('kategori-berita/delete/{id}', 'KategoriBeritaController@destroy');
     Route::resource('kategori-berita', 'KategoriBeritaController');
     Route::resource('berita', 'BeritaController');
+});
+
+// laravel file manager demo
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 
 // Auth::routes([

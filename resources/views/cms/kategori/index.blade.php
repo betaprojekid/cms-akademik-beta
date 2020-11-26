@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between mb-2">
                         <h4 class="header-title">Kategori Berita</h4>
-                        <a href="{{ route('kategori-berita.create') }}" class="btn btn-primary btn-flat">Tambah Kategori Berita</a>
+                        <a href="{{ route('cms.kategori-berita.create') }}" class="btn btn-primary btn-flat">Tambah Kategori Berita</a>
                     </div>
                     <div class="single-table">
                         <div class="table-responsive">
@@ -37,7 +37,7 @@
                                           <ul class="d-flex">
                                               <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i> Ubah</a></li>
                                               <li>
-                                                  <a href="{{ route('kategori-berita.destroy', $category->id) }}" class="text-danger mr-1">
+                                                  <a href="{{ route('cms.kategori-berita.destroy', $category->id) }}" class="text-danger mr-1">
                                                       <i class="ti-trash"></i>Hapus
                                                     </a>
                                             </li>

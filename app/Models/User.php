@@ -38,4 +38,7 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     //relasi
+    public function berita(){
+        return $this->hasMany(Berita::class, 'user_id');
+    }
 }

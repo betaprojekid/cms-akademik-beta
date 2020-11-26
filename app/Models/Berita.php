@@ -27,4 +27,11 @@ class Berita extends Model
 
 
     //relasi
+    public function author()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+    public function kategori(){
+        return $this->belongsTo(KategoriBerita::class, 'kategori_berita_id', 'id');
+    }
 }

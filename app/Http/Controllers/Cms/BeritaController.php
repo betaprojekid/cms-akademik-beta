@@ -6,9 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\{
     Berita,
-    KategoriBerita as Kategori
+    KategoriBerita as Kategori,
+    User
 };
-use App\Http\Requests\Cms\BeritaFormReques as FormRequest;
+use App\Http\Requests\Cms\BeritaFormRequest as FormRequest;
 
 class BeritaController extends Controller
 {
@@ -19,9 +20,9 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        return view('cms.berita.index');
+        $berita = Berita::with('author', 'kategori')->paginate(10);
+        return view('cms.berita.index', compact('berita'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -41,7 +42,26 @@ class BeritaController extends Controller
      */
     public function store(FormRequest $request)
     {
-        //
+        // dd($request->all);
+        if($request->file('gambar_berita')){
+            $gambar_berita = $request->file('gambar_berita')->store('images/berita');
+        }else{
+            $gambar_berita = '';
+        }
+
+        $berita = Berita::create([
+            'judul'              => $request->judul,
+            'kategori_berita_id' => $request->kategori,
+            'user_id'            => 1,
+            'slug'               => \Str::slug($request->judul),
+            'gambar_berita'      => $gambar_berita,
+            'berita'             => $request->berita,
+            'publikasi'          => 1,
+        ]);
+
+        return redirect()
+                ->route('cms.berita.index')
+                ->with('sukses', 'Data berhasil disimpan');
     }
 
     /**

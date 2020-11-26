@@ -22,9 +22,9 @@
                                   <span>Berita</span>
                               </a>
                               <ul class="submenu">
-                                  <li class="active"><a href="{{ route('berita.index') }}">Semua Berita</a></li>
+                                  <li class="active"><a href="{{ route('cms.berita.index') }}">Semua Berita</a></li>
                                   <li><a href="#">Pengumuman</a></li>
-                                  <li><a href="{{ route('kategori-berita.index') }}">Kategori Berita</a></li>
+                                  <li><a href="{{ route('cms.kategori-berita.index') }}">Kategori Berita</a></li>
                               </ul>
                           </li>
                           <li>

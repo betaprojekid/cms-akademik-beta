@@ -11,7 +11,7 @@
               <div class="card-body">
                   <div class="d-flex justify-content-between mb-2">
                       <h4 class="header-title">Berita</h4>
-                      <a href="{{ route('berita.create') }}" class="btn btn-primary btn-flat">Tambah Berita</a>
+                      <a href="{{ route('cms.berita.create') }}" class="btn btn-primary btn-flat">Tambah Berita</a>
                   </div>
                   <div class="single-table">
                       <div class="table-responsive">
@@ -29,13 +29,19 @@
                                 @php
                                     $no=1
                                 @endphp
+                                @foreach ($berita as $item)    
                                 <tr>
-                                  <td></td>
-                                  <td></td>
-                                  <td></td>
-                                  <td></td>
-                                  <td></td>
+                                    <td>{{ $no++ }}</td>
+                                    <td>{{ $item->judul }}</td>
+                                    <td>{{ $item->kategori->kategori }}</td>
+                                    <td>{{ $item->author->name }}</td>
+                                    <td>
+                                        <a href="#">Edit</a> |
+                                        <a href="#">View</a> |
+                                        <a href="#" class="text-danger">Delete</a>
+                                    </td>
                                 </tr>
+                                @endforeach
                               </tbody>
                           </table>
                       </div>

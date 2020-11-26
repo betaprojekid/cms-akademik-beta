@@ -20,7 +20,7 @@ class CreateBeritaTable extends Migration
             $table->foreignId('user_id')->constrained();
             $table->string('judul');
             $table->string('slug')->unique();
-            $table->string('gambar_berita');
+            $table->string('gambar_berita')->nullable();
             $table->text('berita');
             $table->integer('publikasi')->default(0);
             $table->timestamps();

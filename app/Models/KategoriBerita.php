@@ -16,4 +16,7 @@ class KategoriBerita extends Model
     ];
 
     // relationship
+    public function berita(){
+        return $this->hasMany(Berita::class, 'kategori_berita_id');
+    }
 }
