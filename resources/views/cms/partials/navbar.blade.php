@@ -30,8 +30,8 @@
                           <li>
                               <a href="javascript:void(0)"><i class="ti-pie-chart"></i><span>Halaman</span></a>
                               <ul class="submenu">
-                                  <li><a href="#">Semua Halaman</a></li>
-                                  <li><a href="#">Tambah Halaman</a></li>
+                                  <li><a href="{{ route('cms.halaman.index') }}">Semua Halaman</a></li>
+                                  <li><a href="{{ route('cms.halaman.create') }}">Tambah Halaman</a></li>
                               </ul>
                           </li>
                           <li>

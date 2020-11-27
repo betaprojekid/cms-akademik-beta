@@ -40,6 +40,7 @@ Route::group([
     // Route::get('kategori-berita/delete/{id}', 'KategoriBeritaController@destroy');
     Route::resource('kategori-berita', 'KategoriBeritaController');
     Route::resource('berita', 'BeritaController');
+    Route::resource('halaman', 'HalamanController');
 });
 
 // laravel file manager demo
