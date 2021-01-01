@@ -3,7 +3,7 @@
 @section('contents')
 
 <!-- hero slider -->
-<section class="hero-section overlay bg-cover" data-background="home/images/banner/banner-1.jpg">
+<section class="hero-section overlay bg-cover" data-background="images/background.jpg">
     <div class="container">
         <div class="hero-slider">
             <!-- slider item -->
@@ -80,7 +80,7 @@
                 <a href="about.html" class="btn btn-primary-outline">Learn more</a>
             </div>
             <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0">
-                <img class="img-fluid w-100" src="home/images/about/about-us.jpg" alt="about image">
+                <img class="img-fluid w-100" src="images/background.jpg" alt="about image">
             </div>
         </div>
     </div>
